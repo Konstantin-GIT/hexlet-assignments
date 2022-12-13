@@ -9,21 +9,20 @@ import java.util.ArrayList;
 class App {
     public static List findWhere(List<Map<String, String>> books, Map<String, String> searchedBook) {
         List<Map> result = new ArrayList<>();
-        int sizeSearchedBook = searchedBook.size();
         for (var i = 0; i < books.size(); i++) {
-            int status = 0;
+            boolean find = true;
             for (Map.Entry<String, String> currentSearchedKeyAndValue : searchedBook.entrySet()) {
                 var currentSearchedKey = currentSearchedKeyAndValue.getKey();
                 var currentSearchedValue = currentSearchedKeyAndValue.getValue();
                 var currentBook = books.get(i);
                 if (!currentBook.get(currentSearchedKey).equals(currentSearchedValue)) {
-                    break;
+                    find = false;
                 }
-                status++;
             }
-            if (sizeSearchedBook == status) {
+            if (find) {
                 result.add(books.get(i));
             }
+
         }
         return result;
     }
