@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d60af28b-1eb3-4df9-9f19-1562846197c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/generics/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-collections-ru/generics/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/lists/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-collections-ru/lists/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/lists/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-collections-ru/lists/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/lists/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-collections-ru/lists/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/lists/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/maps/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-collections-ru/maps/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/other-collections/src/main/java/exercise/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-collections-ru/other-collections/src/main/java/exercise/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/README.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/examples/Example.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/examples/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/presentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/src/main/java/exercise/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/streams_15.12.22_17.25.20/src/test/java/exercise/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-collections-ru/tests/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-collections-ru/tests/src/test/java/exercise/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-collections-ru/tests/src/test/java/exercise/AppTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="classes-and-objects" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="classes-and-objects" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="classes-and-objects" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="classes-and-objects" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="classes-and-objects" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LgpZ8DGTOA86C7Ji6YERGTdxMO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/konstantin/Hexlet/hexlet-assignments",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RunManager" selected="JAR Application.classes-and-objects.jar">
+    <configuration name="classes-and-objects [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="classes-and-objects [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="classes-and-objects [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="testClasses" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="classes-and-objects [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="classes-and-objects.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/classes-and-objects.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.classes-and-objects.jar" />
+        <item itemvalue="Gradle.classes-and-objects [build]" />
+        <item itemvalue="Gradle.classes-and-objects [test]" />
+        <item itemvalue="Gradle.classes-and-objects [testClasses]" />
+        <item itemvalue="Gradle.classes-and-objects [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d60af28b-1eb3-4df9-9f19-1562846197c1" name="Changes" comment="" />
+      <created>1676302634741</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676302634741</updated>
+    </task>
+    <servers />
+  </component>
+</project>
