@@ -1,9 +1,9 @@
 FROM gradle:7.4.0-jdk17
 
-WORKDIR /src/main/java/exercise/App
+WORKDIR /app
 
-COPY /src/main/java/exercise/App .
+COPY / .
 
-RUN ./gradlew installDist
+RUN gradle installDist
 
 CMD ./build/install/deploy/bin/deploy
