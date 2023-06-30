@@ -16,7 +16,6 @@ import java.nio.file.Path;
 import java.nio.file.Files;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.commons.lang3.ArrayUtils;
@@ -45,10 +44,10 @@ public class UsersServlet extends HttpServlet {
         // BEGIN
         Path fullPath = Paths.get("src/main/resources/users.json").toAbsolutePath().normalize();
         String data = Files.readString(fullPath, StandardCharsets.UTF_8);
-
-        List<Map<String, String>> result = new  ObjectMapper().readValue(data, new TypeReference<>() { });
-
-        return result;
+        ObjectMapper mapper = new ObjectMapper();
+        //List<Map<String, String>> result = new  ObjectMapper().readValue(data, new TypeReference<>() { });
+        mapper.readValue(data, List.class);
+        return mapper.readValue(data, List.class);
 
         // END
     }
