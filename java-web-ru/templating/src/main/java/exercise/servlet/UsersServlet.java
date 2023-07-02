@@ -138,10 +138,7 @@ public class UsersServlet extends HttpServlet {
         }
         // BEGIN
         users.remove(user);
-        request.setAttribute("users", users);
-        // Передаем управление в шаблон
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/users.jsp");
-        requestDispatcher.forward(request, response);
+        response.sendRedirect("/users");
         // END
 
     }
