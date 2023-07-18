@@ -73,16 +73,14 @@ public final class ArticleController {
                 .id.equalTo(id)
                 .findOne();
 
-        if (article == null) {
-            ctx.redirect("articles/");
-            ctx.status(404);
-            return;
-        }
+
         List<Category> categories = new QCategory().findList();
 
         ctx.attribute("article", article);
         ctx.attribute("categories", categories);
-        ctx.redirect("articles/edit.html");
+        //ctx.render("/articles");
+        ctx.render("articles/edit.html");
+        //ctx.redirect("articles/show.html");
         // END
     };
 
@@ -93,6 +91,11 @@ public final class ArticleController {
         String body = ctx.formParam("body");
         long categoryId = ctx.formParamAsClass("categoryId", Long.class).getOrDefault(null);
 
+        Category category = new QCategory()
+                .id.equalTo(categoryId)
+                .findOne();
+
+
         new QArticle()
                 .id.equalTo(id)
                 .asUpdate() // делает из запроса update-запрос
@@ -100,7 +103,7 @@ public final class ArticleController {
                 // Так можно обновить связанную сущность, например владельца компании
                 // Нужно установить id нового владельца
                 .set("body", body)
-                .set("categoryId", categoryId)
+                .set("category", category.getId())
                 .update();
 
         ctx.redirect("/articles");
@@ -116,14 +119,9 @@ public final class ArticleController {
                 .id.equalTo(id)
                 .findOne();
 
-        if (article == null) {
-            ctx.redirect("articles/");
-            ctx.status(404);
-            return;
-        }
         ctx.attribute("article", article);
-        ctx.redirect("articles/delete.html");
-        //ctx.render("articles/delete.html");
+        ctx.render("/articles/delete.html");
+        //ctx.redirect("/articles");
         // END
     };
 
@@ -133,11 +131,7 @@ public final class ArticleController {
         Article article = new QArticle()
                 .id.equalTo(id)
                 .findOne();
-        if (article == null) {
-            ctx.redirect("articles/");
-            ctx.status(404);
-            return;
-        }
+
         article.delete();
         ctx.redirect("/articles");
         ctx.sessionAttribute("flash", "Статья успешно удалена");
