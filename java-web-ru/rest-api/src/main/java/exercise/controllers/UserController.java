@@ -8,6 +8,8 @@ import java.util.List;
 import exercise.domain.User;
 import exercise.domain.query.QUser;
 
+import org.apache.commons.validator.routines.EmailValidator;
+import org.apache.commons.lang3.StringUtils;
 
 public class UserController implements CrudHandler {
 
@@ -38,10 +40,17 @@ public class UserController implements CrudHandler {
     public void create(Context ctx) {
 
         // BEGIN
-        String body = ctx.body();
-        User user = DB.json().toBean(User.class, body);
+
+        User user = ctx.bodyValidator(User.class)
+                .check(it -> it.getFirstName().length() > 0, "First name can not be empty")
+                .check(it -> it.getLastName().length() > 0, "Last name can not be empty")
+                .check(it -> EmailValidator.getInstance().isValid(it.getEmail()), "Should be valid email")
+                .check(it -> StringUtils.isNumeric(it.getPassword()), "Password must contains only digits")
+                .check(it -> it.getPassword().length() >= 4, "Password must contain at least 4 characters")
+                .get();
 
         user.save();
+
         // END
     };
 
