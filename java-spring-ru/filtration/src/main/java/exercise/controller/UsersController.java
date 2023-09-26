@@ -28,15 +28,16 @@ public class UsersController {
     // BEGIN
 
 
-    @GetMapping("")
+    @GetMapping(path = "")
     public Iterable<User> getUsers(
-        @RequestParam(value = "firstName", required = false) String firstName,
-        @RequestParam(value = "lastName", required = false) String lastName
-    ) {
+        @RequestParam(required = false) String firstName,
+        @RequestParam(required = false) String lastName) {
+
         List<Specification> specifications = new ArrayList<>();
         if (firstName != null) {
             specifications.add(new UserSpecification(new SearchCriteria<String>("firstName", firstName)));
         }
+
         if (lastName != null) {
             specifications.add(new UserSpecification(new SearchCriteria<String>("lastName", lastName)));
         }
@@ -50,38 +51,45 @@ public class UsersController {
             });
 
         if (!specifications.isEmpty()) {
-            return this.userRepository.findAll(result);
+            return userRepository.findAll(result);
         }
-        return this.userRepository.findAll();
+
+        return userRepository.findAll();
     }
-
-/*
-    @GetMapping("")
-    public Iterable<User> getUsers(
-        @RequestParam(value = "firstName", required = false) String firstName,
-        @RequestParam(value = "lastName", required = false) String lastName
-    ) {
-
-        if (firstName == null && lastName == null) {
-            return this.userRepository.findAll();
-        }
-
-        if (lastName == null) {
-            return this.userRepository.findAll(QUser.user.firstName.containsIgnoreCase(firstName));
-        }
-        if (firstName == null) {
-            return this.userRepository.findAll(QUser.user.lastName.containsIgnoreCase(lastName));
-        }
-
-        return this.userRepository.findAll(QUser.user.firstName.containsIgnoreCase(firstName)
-            .and(QUser.user.lastName.containsIgnoreCase(lastName)));
-    }
-*/
-/*
-    @GetMapping("")
-    public Iterable<User> getUsers(@QuerydslPredicate(root = User.class) Predicate predicate) {
-        return this.userRepository.findAll(predicate);
-  }
-*/
-
 }
+
+//    Альтернативное решение с использованием Querydsl (дополнительная задача)
+//    if (firstName == null && lastName == null) {
+//        return userRepository.findAll();
+//    }
+//
+//        if (firstName == null) {
+//        return userRepository.findAll(
+//                QUser.user.lastName.containsIgnoreCase(lastName)
+//        );
+//    }
+//
+//        if (lastName == null) {
+//        return userRepository.findAll(
+//                QUser.user.firstName.containsIgnoreCase(firstName)
+//        );
+//    }
+//
+//        return userRepository.findAll(
+//                QUser.user.firstName
+//                        .containsIgnoreCase(firstName)
+//            .and(
+//            QUser.user.lastName
+//                    .containsIgnoreCase(lastName)
+//                )
+//                        );
+
+
+
+
+//     Альтернативное решение с использованием Querydsl web support (дополнительная задача)
+//
+//     @GetMapping(path = "")
+//     public Iterable<User> getUsers(@QuerydslPredicate(root = User.class) Predicate predicate) {
+//         return userRepository.findAll(predicate);
+//     }
