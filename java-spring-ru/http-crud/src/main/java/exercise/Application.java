@@ -27,15 +27,12 @@ public class Application {
     }
 
     // BEGIN
-    @GetMapping(path = "/posts")
-    public List<Post> index(@RequestParam(defaultValue = "10") Integer limit,
-                            @RequestParam(defaultValue = "1") Integer page) {
+    @GetMapping("/posts")
+    public List<Post> index(
+        @RequestParam(defaultValue = "1") Integer page,
+        @RequestParam(defaultValue = "10") Integer limit) {
 
-        int pageSize = limit;
-        int pageNumber = Math.max(page, 1); // Убедиться, что номер страницы не меньше 1
-        int startIndex = (pageNumber - 1) * pageSize;
-        int endIndex = Math.min(startIndex + pageSize, posts.size()); // Убедиться, что endIndex не выходит за границы коллекции
-        return posts.subList(startIndex, endIndex);
+        return posts.stream().skip((page - 1) * limit).limit(limit).toList();
     }
 
     @PostMapping(path = "/posts")
