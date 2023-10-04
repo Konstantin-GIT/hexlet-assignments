@@ -22,7 +22,7 @@ public class MessageSender {
         // Отправляем сообщение в обменник "exchange" с ключом "exchange.key"
         // и оно будет маршрутизировано в созданную вами очередь "queue"
         LOGGER.info("Sending message to the queue...-------->" + message);
-        rabbitTemplate.convertAndSend("exchange", "exchange.key", message);
+        rabbitTemplate.convertAndSend("exchange", "key", message);
     }
     // END
 }

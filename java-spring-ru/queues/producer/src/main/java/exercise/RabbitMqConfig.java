@@ -26,7 +26,7 @@ public class RabbitMqConfig {
     @Bean
     Binding binding(Queue queue, TopicExchange exchange) {
         // Сообщения с ключом "exchange.key" будут направлены в очередь "queue"
-        return BindingBuilder.bind(queue).to(exchange).with("exchange.key");
+        return BindingBuilder.bind(queue).to(exchange).with("key");
     }
     // END
 }
