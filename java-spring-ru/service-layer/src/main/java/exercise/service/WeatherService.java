@@ -33,12 +33,35 @@ public class WeatherService {
     }
 
     // BEGIN
-    public Map<String, String> getWeatherOfCity(Long id) throws JsonProcessingException {
+  /*  public Map<String, String> getWeatherOfCity(Long id) throws JsonProcessingException {
         var city = cityRepository.findById(id)
             .orElseThrow(() -> new CityNotFoundException("City not found"));
 
         return objectMapper.readValue(client.get("http://weather/api/v2/cities/" + city.getName()), Map.class );
+    }*/
+
+    public Map<String, String> getWeatherOfCity(long id) {
+
+        City city = cityRepository.findById(id)
+            .orElseThrow(() -> new CityNotFoundException("City with id = " + id + " not found"));
+
+        String cityName = city.getName();
+        String url = "http://weather/api/v2/cities/" + cityName;
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        String responce = client.get(url);
+
+        Map<String, String> result;
+
+        try {
+            result = mapper.readValue(responce, Map.class);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+
+        return result;
+    }
 
     public List<Map<String, String>> getAllCitiesAndWeather(List<City> cities) throws CityNotFoundException, JsonProcessingException {
         List<Map<String, String>> citiesAndWeather = new ArrayList<>();

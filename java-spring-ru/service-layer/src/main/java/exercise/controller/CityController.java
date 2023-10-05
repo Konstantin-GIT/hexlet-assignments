@@ -6,10 +6,8 @@ import exercise.repository.CityRepository;
 import exercise.service.WeatherService;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.List;
@@ -39,9 +37,10 @@ public class CityController {
 
 
     @GetMapping(path="/cities/{id}")
-    Map<String, String> getWeatherOfCity(@PathVariable Long id) throws JsonProcessingException {
-        return Optional.of(weatherService.getWeatherOfCity(id))
-            .orElseThrow(() -> new CityNotFoundException("City not found"));
+    @ResponseStatus(HttpStatus.OK)
+    Map<String, String> getWeatherOfCity(@PathVariable Long id) {
+        Map<String, String> weather =  weatherService.getWeatherOfCity(id);
+        return weather;
     }
 
     // END
