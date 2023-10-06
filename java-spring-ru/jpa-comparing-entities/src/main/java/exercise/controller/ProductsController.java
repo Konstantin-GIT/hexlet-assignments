@@ -47,11 +47,11 @@ public class ProductsController {
 
     @PostMapping(path = "")
     @ResponseStatus(HttpStatus.CREATED)
-    public Product create(@RequestBody Product productData) {
-        if (productRepository.existsProductByTitleAndPrice(productData.getTitle(), productData.getPrice())) {
-            throw new ResourceAlreadyExistsException("Product already exists");
+    public Product create(@RequestBody Product product) {
+        if (productRepository.findAll().contains(product)) {
+            throw new ResourceAlreadyExistsException("Product " + product.getTitle() + " already exists");
         }
-        return productRepository.save(productData);
+        return productRepository.save(product);
     }
 
     // END
