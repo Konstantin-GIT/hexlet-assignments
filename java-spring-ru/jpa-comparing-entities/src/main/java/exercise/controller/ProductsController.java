@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
+import java.util.Optional;
 
 import exercise.model.Product;
 import exercise.repository.ProductRepository;
@@ -33,18 +34,27 @@ public class ProductsController {
     }
 
     // BEGIN
+/*
     @PostMapping(path = "")
     @ResponseStatus(HttpStatus.CREATED)
     public Product create(@RequestBody Product productData) {
-        try {
-            var product = productRepository.save(productData);
-            return product;
-        } catch (RuntimeException ex) {
+
+
+        return Optional.of(productRepository.save(productData))
+         .orElseThrow(() -> new ResourceAlreadyExistsException("Product already exists"));
+    }
+*/
+
+    @PostMapping(path = "")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Product create(@RequestBody Product productData) {
+        if (productRepository.existsProductByTitleAndPrice(productData.getTitle(), productData.getPrice())) {
             throw new ResourceAlreadyExistsException("Product already exists");
         }
+        return productRepository.save(productData);
     }
-    // END
 
+    // END
     @GetMapping(path = "/{id}")
     public Product show(@PathVariable long id) {
         var product =  productRepository.findById(id)

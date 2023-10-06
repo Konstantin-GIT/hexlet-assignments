@@ -7,5 +7,5 @@ import exercise.model.Product;
 
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long>, JpaRepository<Product, Long> {
-
+    public Boolean existsProductByTitleAndPrice(String title, int price);
 }
