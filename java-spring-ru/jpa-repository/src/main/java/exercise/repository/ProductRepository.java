@@ -11,7 +11,7 @@ import exercise.model.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
     // BEGIN
-    public List<Product> findByPriceBetweenOrderByPriceAsc(int min, int max);
+    List<Product> findByPriceBetween(Integer min, Integer max, Sort sort);
 
     // END
 }
