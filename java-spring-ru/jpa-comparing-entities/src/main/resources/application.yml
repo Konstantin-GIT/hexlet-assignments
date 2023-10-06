@@ -1,0 +1,17 @@
+---
+# BEGIN
+server:
+  port: ${PORT:5001}
+
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:hexlet
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+# END
