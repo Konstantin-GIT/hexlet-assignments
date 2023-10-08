@@ -26,48 +26,42 @@ public class PostsController {
     PostRepository postRepository;
 
     @Autowired
-    CommentRepository commentRepository;
+    CommentRepository commentsRepository;
 
     @GetMapping(path = "")
     public List<PostDTO> index() {
-        List<Post> posts = postRepository.findAll();
-        List<PostDTO> postsDTO = new ArrayList<>();
-
-        for (Post post: posts) {
-            List<Comment> comments = commentRepository.findByPostId(post.getId());
-            postsDTO.add(postToDTO(post, comments));
-        }
-        return postsDTO;
-
+        var posts = postRepository.findAll();
+        var result = posts.stream()
+            .map(this::toPostDTO)
+            .toList();
+        return result;
     }
 
     @GetMapping(path = "/{id}")
     public PostDTO show(@PathVariable long id) {
-        var post = postRepository.findById(id)
+
+        var post =  postRepository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Post with id " + id + " not found"));
-        List<Comment> comments = commentRepository.findByPostId(id);
-        return postToDTO(post, comments);
+
+        return toPostDTO(post);
     }
 
-
-    private List<CommentDTO> commentsToDTO(List<Comment> comments) {
-        List<CommentDTO> result = new ArrayList<>();
-        for (Comment comment : comments) {
-        CommentDTO commentDTO = new CommentDTO();
-        commentDTO.setId(comment.getId());
-        commentDTO.setBody(comment.getBody());
-        result.add(commentDTO);
-        }
-        return result;
-    }
-
-    private PostDTO postToDTO(Post post, List<Comment> comments) {
-        PostDTO postDTO = new PostDTO();
-        postDTO.setId(post.getId());
-        postDTO.setBody(post.getBody());
-        postDTO.setTitle(post.getTitle());
-        postDTO.setComments(commentsToDTO(comments));
-        return postDTO;
+    private PostDTO toPostDTO(Post post) {
+        var dto = new PostDTO();
+        dto.setId(post.getId());
+        dto.setTitle(post.getTitle());
+        dto.setBody(post.getBody());
+        var comments = commentsRepository.findByPostId(post.getId());
+        var commentsDto = comments.stream()
+            .map((comment) -> {
+                var commentDto = new CommentDTO();
+                commentDto.setBody(comment.getBody());
+                commentDto.setId(comment.getId());
+                return commentDto;
+            })
+            .toList();
+        dto.setComments(commentsDto);
+        return dto;
     }
 
 
