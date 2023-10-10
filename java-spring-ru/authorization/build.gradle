@@ -28,6 +28,9 @@ dependencies {
   testImplementation 'com.github.database-rider:rider-junit5:1.36.0'
 }
 
+task stage(dependsOn: ['clean', 'installDist'])
+installDist.mustRunAfter clean
+
 test {
   useJUnitPlatform()
 }
