@@ -17,29 +17,23 @@ public class WebSecurityConfig {
 
     final UserDetailsServiceImpl userDetailsService;
 
+
+
     @Bean
     // Переопределяет схему аутентификации
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         // BEGIN
-        http
-            .authorizeHttpRequests((requests) -> requests
+        http.csrf().disable()
+            .authorizeHttpRequests((request) -> request
                 .requestMatchers("/").permitAll()
                 .requestMatchers(HttpMethod.POST, "/users").permitAll()
+                //.requestMatchers(HttpMethod.GET, "/users").permitAll()
                 .anyRequest().authenticated()
             )
-
-            /*
-            .formLogin((form) -> form
-                .loginPage("/login")
-                .permitAll()
-            )
-            .logout((logout) -> logout.permitAll())*/
             .httpBasic();
-
         return http.build();
         // END
     }
-
     // Указываем, что для сравнения хешей паролей
     // будет использоваться кодировщик BCrypt
     @Bean

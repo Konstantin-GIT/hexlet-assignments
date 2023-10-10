@@ -5,6 +5,7 @@ import exercise.model.User;
 import exercise.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -27,18 +28,16 @@ public class UserController {
     }
 
     // BEGIN
-    @PostMapping(path="")
-    public Optional<UserDto> login(@RequestBody UserDto userDto) {
-        var user =  userRepository.findUserByUsername(userDto.username());
-        if (user.isEmpty()) {
-            User newUser = new User();
-            newUser.setUsername(userDto.username());
-            newUser.setPassword(encoder.encode(userDto.password()));
-            userRepository.save(newUser);
-        }
-        return Optional.of(userDto);
+    @PostMapping(path = "")
+    public User createUser(@RequestBody UserDto userDto) {
+        User user = new User();
+        user.setUsername(userDto.username());
+        user.setEmail(userDto.email());
+        user.setPassword(encoder.encode(userDto.password()));
 
+        return userRepository.save(user);
     }
+
     // END
 }
 
